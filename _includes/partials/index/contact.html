@@ -1,0 +1,165 @@
+{%- capture content -%}
+  <div id="contactForm">
+    <p class="small"><span class="text-danger me-1">*</span>Required</p>
+    <div class="mb-3">
+      <label for="contactName" class="form-label">Name</label>
+      <input type="text" class="form-control form-field" id="contactName" onchange="validate(this)">
+    </div>
+    <div class="mb-3">
+      <label for="contactContact" class="form-label">
+        How can we reach you?
+        <span class="d-block small text-muted">Leave Twitter, Telegram, Farcaster, email, etc</span>
+      </label>
+      <input type="text" class="form-control form-field" id="contactContact" onchange="validate(this)">
+    </div>
+    <div class="">
+      <label for="contactMessage" class="form-label">
+        <span class="text-danger me-1">*</span>
+        Message
+      </label>
+      <textarea type="textarea" class="form-control form-field" id="contactMessage" rows="6" required onchange="validate(this)"></textarea>
+    </div>
+
+    <div class="d-none">
+      <input type="text" class="form-control form-field" id="contactCaptcha" required onchange="validate(this)">
+    </div>
+
+    <!-- Error Message -->
+    <p id="contactFormError" class="text-danger mt-2 d-none">* Please fill out all required fields</p>
+
+    <!-- Submit -->
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3 mb-2">
+      <button class="btn btn-primary" type="button" onclick="submitApplication()">Submit</button>
+    </div>
+  </div>
+  <p id="contactFormSubmitted" class="d-none">✅ Message submitted!</p>
+
+
+  <script type="text/javascript">
+    function submitApplication() {
+      let formValid = validate();
+      if (formValid) {
+        // Hide error message for empty required fields
+        document.getElementById("contactFormError").classList.add("d-none");
+        // Submit data to google forms
+        sendData();
+        // Display submission success message
+        document.getElementById("contactForm").classList.add("d-none");
+        document.getElementById("contactFormSubmitted").classList.remove("d-none");
+      } else {
+        // Show error message for empty required fields
+        document.getElementById("contactFormError").classList.remove("d-none");
+      }
+    }
+
+    // Validate form and inputs
+    function validate(input=false) {
+      const inputs = input ? [input] : document.querySelectorAll('.form-field');
+      let formValid = true;
+      inputs.forEach(el => {
+        let type = el.getAttribute('type');
+        if (el.hasAttribute('required')) {
+          let inputValid = false;
+          // console.log({"id_0":el.id,"formValid":formValid,"inputValid":inputValid})
+          // Inputs/Textareas
+          if ((type == "text" || type == "textarea") && el.id != "contactCaptcha") {
+            el.value = el.value.trim();
+            if (el.value == "") {
+              formValid = false;
+            } else {
+              inputValid = true;
+            }
+          // Email
+          } else if (type == "email") {
+            el.value = el.value.replaceAll(" ", "");
+            if (el.value == "") {
+              formValid = false;
+            } else if (/^\S+@\S+\.\S+$/.test(el.value)) {
+              inputValid = true;
+            }
+          // Select Dropdown
+          } else if (type == "select") {
+            if (el.value == "") {
+              formValid = false;
+            } else {
+              inputValid = true;
+            }
+          // Checkbox Group
+          } else if (type == "checkboxes") {
+            let checked = document.querySelectorAll(`#${el.id} input[type=checkbox]:checked`);
+            if (checked.length == 0) {
+              formValid = false;
+              el.classList.add("form-control");
+            } else {
+              inputValid = true;
+              el.classList.remove("form-control");
+            }
+          // Radio Group
+          } else if (type == "radios") {
+            let checked = document.querySelectorAll(`#${el.id} input[type=radio]:checked`);
+            let optionSelected = checked.length > 0;
+            let otherOptionSelected = checked[0].value == "__other_option__";
+            let otherOptionValue = false;
+            if (otherOptionSelected) {
+              otherOptionValue = document.querySelector(`#${el.id}Other`).value.trim();
+            }
+            if ((otherOptionSelected && otherOptionValue != "") || (optionSelected && !otherOptionSelected)) {
+              inputValid = true;
+              el.classList.remove("form-control");
+            } else {
+              formValid = false;
+              el.classList.add("form-control");
+            }
+          }
+          if (el.id == "contactCaptcha") {
+            el.value = el.value.trim();
+            if (el.value != "") {
+              formValid = false;
+              inputValid = false;
+            } else {
+              inputValid = true;
+            }
+          }
+          if (inputValid) {
+            el.classList.remove("is-invalid");
+            el.classList.add("is-valid");
+          } else {
+            el.classList.add("is-invalid");
+            el.classList.remove("is-valid");
+          }
+          // console.log({"id_1":el.id,"formValid":formValid,"inputValid":inputValid})
+        }
+      });
+      return formValid;
+    }
+
+    // Submit data to google forms
+    function sendData() {
+      let url = "https://docs.google.com/forms/d/e/1FAIpQLScMA62ccgGhtD00FKzhiI-kbpfRSbdy8UMRGt-RM_6kMK12qw/formResponse";
+      let dataToPost = new FormData();
+
+      dataToPost.append("entry.78222439", document.getElementById("contactName").value);
+      dataToPost.append("entry.563942532", document.getElementById("contactContact").value);
+      dataToPost.append("entry.1165739135", document.getElementById("contactMessage").value);
+
+      fetch(url,{
+        method: "POST",
+        mode: "no-cors",
+        header:{
+          'Content-Type': 'application/json'
+        },
+        body: dataToPost
+      })
+      .then(data=>{
+        log(data);
+        log("data submitted");
+      })
+      .catch(err=>console.error(err));
+    }
+  </script>
+{%- endcapture -%}
+
+{% include components/details.html
+  title="Contact"
+  body=content
+%}

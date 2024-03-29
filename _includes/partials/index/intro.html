@@ -1,0 +1,52 @@
+{%- capture divider -%}
+  <span class="mx-2" style="color:var(--eda-hr-color);">|</span>
+{%- endcapture -%}
+{%- capture content -%}
+  <p>We are a group of individuals and entities with the goal of protecting Ethereum against risk vectors and fostering a robust and sustainable network.</p>
+
+  <p>
+    <div>› Monitor governance with <a href="" class="lh-lg">GovWatch</a></div>
+    <div>› Monitor chain health with <a href="" class="lh-lg">StateOfEth</a></div>
+  </p>
+
+  <hr>
+
+  <!-- <a href="" class="lh-lg">About</a>{{divider}}
+  <a href="" class="lh-lg">Delegates</a>{{divider}}
+  <a href="" class="lh-lg">GovWatch</a>{{divider}}
+  <br class="d-sm-none">
+  <a href="" class="lh-lg">StateOfEth</a>{{divider}}
+  <a href="" class="lh-lg">Contact</a> -->
+
+
+
+
+  {% include components/details.html
+    title="About"
+    body="The EDA's mission is to protect the decentralizednature of the Ethereum Blockchain and its ecosystem through:
+
+  - Collaboration: Ethereum has matured to the point no one person can know everything. The EDA looks to create a space for individuals to play off each other's strengths and weaknesses to achieve a greater good.
+  - Education: Knowledge about decentralization pitfalls and their common causes is important to prevent the community at large from falling into them. This is our first (and possibly best) defense against bad actors.
+  - Governance: Governance shapes the direction of many of the projects built on Ethereum. The EDA contains many delegates across a wide-range of projects who are looking to provide a unified voice to token-holders within their respective DAOs.
+  - Monitoring: We are developing tools and resources to actively monitor threats to the decentralization of Ethereum in the hopes we can catch them before major issues arise.
+  - Messaging: Once a threat has been determined, we look to spread the message to the broader Ethereum community for swift course correction."
+  %}
+  {% include components/details.html
+    title="Members"
+    body=""
+  %}
+  {% include components/details.html
+    title="Delegates"
+    body=""
+  %}
+  {% include components/details.html
+    title="Contact"
+    body=""
+  %}
+{%- endcapture -%}
+
+{% include components/card-text.html
+  title="Ethereum Defense Alliance (EDA)"
+  body=content
+  markdown=false
+%}

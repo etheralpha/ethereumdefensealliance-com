@@ -1,0 +1,62 @@
+{%- capture content -%}
+  <style type="text/css">
+    #memberTable {
+      /*increase height up to this when more members added*/
+      /*height: 400;*/
+      height: 270;
+      max-height: 80vh;
+      overflow-y:scroll;
+    }
+    #memberTable thead {
+      background-color: #081018;
+    }
+    @media screen and (max-width: 400px) {
+      #memberTable .table tbody td:first-child {
+        max-width: 200px;
+      }
+    }
+  </style>
+
+
+  <div id="memberTable" class="table-responsive card">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Member</th>
+          <th scope="col">Socials</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- assign members = site.data.members -%}
+        {%- for member in members -%}
+          <tr>
+            {%- assign label = "" -%}
+            {%- if member.label -%}
+              {%- capture label -%}
+                , {{member.label}}
+              {%- endcapture -%}
+            {%- endif -%}
+            <td>{{member.name}}{{label}}</td>
+            <td>
+              {%- if member.twitter -%}
+                {%- assign twitter_handle = member.twitter | replace: "@", "" | split: "/" | last -%}
+                <a href="https://twitter.com/{{twitter_handle}}" target="_blank" class="col col-1 me-2">{{site.data.icons.twitter}}</a>
+              {%- endif -%}
+              {%- if member.farcaster -%}
+                {%- assign farcaster_handle = member.farcaster | replace: "@", "" | split: "/" | last -%}
+                <a href="https://mycaster.xyz/?p={{farcaster_handle}}" target="_blank" class="col col-1 me-2">{{site.data.icons.farcaster}}</a>
+              {%- endif -%}
+            </td>
+          </tr>
+        {%- endfor -%}
+      </tbody>
+    </table>
+  </div>
+{%- endcapture -%}
+
+
+{% include components/details.html
+  title="Members"
+  body=content
+  markdown=false
+%}

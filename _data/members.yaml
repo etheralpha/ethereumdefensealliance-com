@@ -1,0 +1,31 @@
+# Template to copy for new entries
+# - name: 
+#   label: 
+#   twitter: 
+#   farcaster: 
+
+
+- name: hanniabu.eth
+  label: EDA Steward
+  twitter: hanni_abu
+  farcaster: hanniabu
+- name: bobrossi.eth
+  label: EDA Steward
+  twitter: BobRossiETH
+  farcaster: 
+- name: minimalgravitas.eth
+  label: EDA Steward
+  twitter: 
+  farcaster: minimalgravitas
+- name: benido
+  label: EDA Steward
+  twitter: 
+  farcaster: benido
+# - name: nixo.eth
+#   label: EthStaker
+#   twitter: nixorokish
+#   farcaster: nixo.eth
+# - name: superphiz.eth
+#   label: 
+#   twitter: superphiz
+#   farcaster: superphiz.eth

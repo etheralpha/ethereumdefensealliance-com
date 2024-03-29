@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+
+{%- capture content -%}
+  <p>We are a group of individuals and entities with the goal of protecting Ethereum against risk vectors and fostering a robust and sustainable network.</p>
+  <p>
+    <div>› Monitor governance with <a href="https://govwatch.ethereumdefensealliance.com " class="lh-lg">GovWatch</a></div>
+    <!-- <div>› Monitor chain health with <a href="" class="lh-lg">StateOfEth</a></div> -->
+  </p>
+  <hr>
+
+  {% include partials/index/about.html %}
+  {% include partials/index/members.html %}
+  {% include partials/index/delegates.html %}
+  {% include partials/index/contact.html %}
+  
+{%- endcapture -%}
+
+{% include components/card-text.html
+  title="Ethereum Defense Alliance (EDA)"
+  body=content
+  markdown=false
+%}
+
+

@@ -1,0 +1,108 @@
+{%- capture content -%}
+  <style type="text/css">
+    #projectFilter {
+      background-color: #081018;
+    }
+    #delegateGuide .detail-body {
+      height: 375px;
+      max-height: 80vh;
+      overflow-y:scroll;
+    }
+    #delegateTable {
+      height: 350px;
+      max-height: 80vh;
+      overflow-y:scroll;
+    }
+    #delegateTable thead {
+      background-color: #081018;
+    }
+    @media screen and (max-width: 400px) {
+      #delegateTable .table tbody td:first-child {
+        max-width: 175px;
+      }
+    }
+    #delegateTable .table tbody td:last-child {
+      text-wrap: nowrap;
+    }
+  </style>
+
+
+  <div id="delegateGuide" class="card">
+    <div class="card-body pb-0">
+      <details {{open}} {{disabled}} class="{{classes}}">
+        <summary class="mb-3">How to view, set, or change delegates
+          <span class="arrowicon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+        </summary>
+        <hr>
+        <div class="detail-body pb-1">
+          {%- capture guide -%}
+            {% include partials/index/delegate-guide.html %}
+          {%- endcapture -%}
+          {{guide | markdownify}}
+        </div>
+      </details>
+    </div>
+  </div>
+  <hr>
+
+  {%- assign projects = site.data.watchlist | sort_natural: "name" -%}
+  <select id="projectFilter" class="form-select mb-2" aria-label="Project filter" onchange="filterDelegatedByProject()">
+    <option value="none" selected disabled hidden>Filter projects</option>
+    <option value="all">All projects</option>
+    {%- for project in projects -%}
+      {%- if project.delegates -%}
+        <option value="{{project.name | downcase | strip | replace: ' ', '-''}}">{{project.name}}</option>
+      {%- endif -%}
+    {%- endfor -%}
+  </select>
+
+  <div id="delegateTable" class="table-responsive card">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Delegate</th>
+          <th scope="col">Project</th>
+          <th scope="col">Profile</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- for project in projects -%}
+          {%- if project.delegates -%}
+            {%- for delegate in project.delegates -%}
+              <tr data-proj="{{project.name | downcase | strip | replace: ' ', '-''}}">
+                <td>{{delegate.name}}</td>
+                <td>{{project.name}}</td>
+                <td><a href="{{delegate.link}}">View Profile →</a></td>
+              </tr>
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </tbody>
+    </table>
+  </div>
+
+
+  <script type="text/javascript">
+    function filterDelegatedByProject() {
+      let projectFilter = document.getElementById("projectFilter").value;
+      if (projectFilter == "all") {
+        document.querySelectorAll("#delegateTable tbody tr").forEach((el) => {
+          el.classList.remove("d-none");
+        });
+      } else {
+        document.querySelectorAll("#delegateTable tbody tr").forEach((el) => {
+          el.classList.add("d-none");
+          if (el.getAttribute('data-proj') == projectFilter) {
+            el.classList.remove("d-none");
+          }
+        });
+      }
+    }
+  </script>
+{%- endcapture -%}
+
+
+{% include components/details.html
+  title="Delegates"
+  body=content
+%}
