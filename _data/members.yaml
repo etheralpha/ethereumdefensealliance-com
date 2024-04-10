@@ -37,6 +37,10 @@
   label: Puffer
   twitter: jasnoodle
   farcaster: 
+- name: amiru.eth
+  label: Puffer
+  twitter: amironchain
+  farcaster: amiru.eth
 - name: waqwaqattack.eth
   label: Rocket Pool
   twitter: waqwaqattack
