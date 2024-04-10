@@ -17,7 +17,7 @@
   label: EDA Steward
   twitter: 
   farcaster: minimalgravitas
-- name: benido
+- name: Benido
   label: EDA Steward
   twitter: 
   farcaster: benido
@@ -26,9 +26,17 @@
 #   twitter: nixorokish
 #   farcaster: nixo.eth
 - name: superphiz.eth
-  label: 
+  label: Advocate
   twitter: superphiz
   farcaster: superphiz.eth
+- name: Prada
+  label: Diva
+  twitter: pradavc
+  farcaster: pradavc
+- name: Jason Vranek
+  label: Puffer
+  twitter: jasnoodle
+  farcaster: 
 - name: waqwaqattack.eth
   label: Rocket Pool
   twitter: waqwaqattack
