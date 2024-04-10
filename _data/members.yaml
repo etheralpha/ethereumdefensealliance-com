@@ -11,7 +11,7 @@
   farcaster: hanniabu
 - name: bobrossi.eth
   label: EDA Steward
-  twitter: BobRossiETH
+  twitter: bobrossieth
   farcaster: 
 - name: minimalgravitas.eth
   label: EDA Steward
@@ -25,7 +25,11 @@
 #   label: EthStaker
 #   twitter: nixorokish
 #   farcaster: nixo.eth
-# - name: superphiz.eth
-#   label: 
-#   twitter: superphiz
-#   farcaster: superphiz.eth
+- name: superphiz.eth
+  label: 
+  twitter: superphiz
+  farcaster: superphiz.eth
+- name: waqwaqattack.eth
+  label: Rocket Pool
+  twitter: waqwaqattack
+  farcaster: waq
