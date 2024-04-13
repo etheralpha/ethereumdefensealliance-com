@@ -54,6 +54,8 @@
   delegates:
     - name: waqwaqattack.eth
       link: https://delegates.rocketpool.net/delegates/0x2600846F4401aE10CA760604036A891bb896649E
+    - name: jasperthefriendlyghost.eth
+      link: https://delegates.rocketpool.net/delegates/0x04BEE613690e98A1959F236c38AbAa5f2439B14a
 - id: diva
   name: Diva
   category: LSTs
@@ -64,8 +66,8 @@
   proposals_other: 
   status: live
   delegates:
-    # - name: jasperthefriendlyghost.eth
-    #   link: https://www.tally.xyz/profile/jasperthefriendlyghost.eth?governanceId=eip155:1:0xFb6B7C11a55C57767643F1FF65c34C8693a11A70
+    - name: jasperthefriendlyghost.eth
+      link: https://www.tally.xyz/profile/jasperthefriendlyghost.eth?governanceId=eip155:1:0xFb6B7C11a55C57767643F1FF65c34C8693a11A70
     - name: waqwaqattack.eth
       link: https://www.tally.xyz/profile/0x2600846f4401ae10ca760604036a891bb896649e?governanceId=eip155:1:0xFb6B7C11a55C57767643F1FF65c34C8693a11A70
     # - name: superphiz.eth
