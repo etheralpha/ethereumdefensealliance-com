@@ -172,8 +172,8 @@
   proposals_other: 
   status: live
   delegates:
-    # - name: bobrossi.eth
-    #   link: https://www.tally.xyz/profile/bobrossi.eth?governanceId=eip155:42161:0xf07DeD9dC292157749B6Fd268E37DF6EA38395B9
+    - name: bobrossi.eth
+      link: https://www.tally.xyz/profile/bobrossi.eth?governanceId=eip155:42161:0xf07DeD9dC292157749B6Fd268E37DF6EA38395B9
     # - name: L2BEAT
     #   link: https://www.tally.xyz/profile/l2beatcom.eth?governanceId=eip155:42161:0xf07DeD9dC292157749B6Fd268E37DF6EA38395B9
     # - name: Griff Green
@@ -338,8 +338,8 @@
   proposals_other: 
   status: live
   delegates:
-    # - name: bobrossi.eth
-    #   link: https://www.tally.xyz/profile/bobrossi.eth?governanceId=eip155:1:0xed8Bdb5895B8B7f9Fdb3C087628FD8410E853D48
+    - name: bobrossi.eth
+      link: https://www.tally.xyz/profile/bobrossi.eth?governanceId=eip155:1:0xed8Bdb5895B8B7f9Fdb3C087628FD8410E853D48
     # - name: dybsy.eth
     #   link: https://www.tally.xyz/profile/dybsy.sismo.eth?governanceId=eip155:1:0xed8Bdb5895B8B7f9Fdb3C087628FD8410E853D48
     # - name: lefteris.eth
