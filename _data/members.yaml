@@ -21,10 +21,10 @@
   label: EDA Steward
   twitter: 
   farcaster: benido
-# - name: nixo.eth
-#   label: EthStaker
-#   twitter: nixorokish
-#   farcaster: nixo.eth
+- name: nixo.eth
+  label: EthStaker
+  twitter: nixorokish
+  farcaster: nixo.eth
 - name: superphiz.eth
   label: Advocate
   twitter: superphiz
@@ -73,3 +73,32 @@
   label: Hop Delegate
   twitter: therealdybsy
   farcaster: dybsy
+- name: Thorsten Behrens
+  label: EthStaker
+  twitter: yorickdowne
+  farcaster: 
+- name: Evan Jones
+  label: Advocate
+  twitter: ib1gymnast
+  farcaster: ib1gymnast
+- name: 5dayoldburrito
+  label: Advocate
+  twitter: 5dayoldburrito
+  farcaster: 5dayoldburrito
+# - name: Freek
+#   label: Advocate
+#   twitter: 
+#   farcaster: 
+# - name: Grant
+#   label: Rocket Pool
+#   twitter: 
+#   farcaster: 
+
+
+
+
+
+
+
+
+  
