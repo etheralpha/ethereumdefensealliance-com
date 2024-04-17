@@ -85,14 +85,18 @@
   label: Advocate
   twitter: 5dayoldburrito
   farcaster: 5dayoldburrito
+- name: darkosnightmare
+  label: Influence
+  twitter: darkosnightmare
+  farcaster: 
 # - name: Freek
 #   label: Advocate
 #   twitter: 
 #   farcaster: 
-# - name: Grant
-#   label: Rocket Pool
-#   twitter: 
-#   farcaster: 
+- name: Grant
+  label: Rocket Pool
+  twitter: grant_RPL
+  farcaster: 
 
 
 
