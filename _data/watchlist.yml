@@ -240,8 +240,8 @@
   proposals_other: 
   status: live
   delegates:
-    # - name: Influence
-    #   link: https://governance.starknet.io/delegates/profile/515ad8e2-8b42-440c-b0ea-0f09a46557a6
+    - name: Influence
+      link: https://governance.starknet.io/delegates/profile/515ad8e2-8b42-440c-b0ea-0f09a46557a6
     # - name: Aybala
     #   link: https://governance.starknet.io/delegates/profile/13178099-69db-4c6c-87d7-5d2861ee6615
     # - name: webOfTrust
