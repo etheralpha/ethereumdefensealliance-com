@@ -61,7 +61,7 @@
   label: Advocate
   twitter: ryanberckmans
   farcaster: ryanb.eth
-- name: austonst
+- name: austonst.eth
   label: Aestus Relay
   twitter: austonst
   farcaster: austonst.eth
@@ -89,14 +89,26 @@
   label: Influence
   twitter: darkosnightmare
   farcaster: 
-# - name: Freek
-#   label: Advocate
-#   twitter: 
-#   farcaster: 
+- name: Freek
+  label: Advocate
+  twitter: ffboers
+  farcaster: freek
 - name: Grant
   label: Rocket Pool
   twitter: grant_RPL
   farcaster: 
+- name: pa7x1
+  label: Advocate
+  twitter: 
+  farcaster: pa7x1
+- name: phimarhal.eth
+  label: Advocate
+  twitter: phimarhal
+  farcaster: phimarhal
+- name: haurog.eth
+  label: Advocate
+  twitter: haurog1
+  farcaster: haurog
 
 
 
